@@ -5,7 +5,7 @@ const stockProductos = [
       nombre: "Esp James Hetfield",
       cantidad: 1,
       desc: "Guitarra Esp metallica",
-      precio: 1200,
+      precio: 70000,
       img: "../imagenes/esp.jpg",
     },
     {
@@ -13,7 +13,7 @@ const stockProductos = [
       nombre: "Esp Cola de tiburon",
       cantidad: 1,
       desc: "Guitarra modelo Kirk hammet",
-      precio: 1500,
+      precio: 90000,
       img: "../imagenes/esp1.jpg",
     },
     {
@@ -21,7 +21,7 @@ const stockProductos = [
       nombre: "Gipson Les Paul",
       cantidad: 1,
       desc: "Guitarra de 6 cuerda ",
-      precio: 1570,
+      precio: 101000,
       img: "../imagenes/gibson.jpg",
     },
     {
@@ -29,7 +29,7 @@ const stockProductos = [
       nombre: "Ibanez RG160",
       cantidad: 1,
       desc: "guitarra de 6 cuerdas con tremolo",
-      precio: 1000,
+      precio: 97000,
       img: "../imagenes/ibanez.jpg",
     },
     {
@@ -37,7 +37,7 @@ const stockProductos = [
       nombre: "Ibanez RGAR42 ",
       cantidad: 1,
       desc: "Guitarra japoneza de 6 cuerdas con tremolo",
-      precio: 1200,
+      precio: 130000,
       img: "../imagenes/ibanez1.jpg",
     },
     {
@@ -45,7 +45,7 @@ const stockProductos = [
       nombre: "jackson Esp",
       cantidad: 1,
       desc: "Guitarra 6 cuerdas negra ",
-      precio: 1200,
+      precio: 82000,
       img: "../imagenes/jackson.jpg",
     },
     {
@@ -53,7 +53,7 @@ const stockProductos = [
       nombre: "jackson R-10",
       cantidad: 1,
       desc: "Guitarra de 6 con puete fijo",
-      precio: 1400,
+      precio: 95000,
       img: "../imagenes/jackson2.jpg",
     },
     {
@@ -61,7 +61,7 @@ const stockProductos = [
       nombre: "stramberg boden",
       cantidad: 1,
       desc: "Guitarra ergonomica de 6 cuerdas",
-      precio: 1200,
+      precio: 250000,
       img: "../imagenes/stramberg.jpg",
     },
     {
@@ -69,7 +69,7 @@ const stockProductos = [
       nombre: "Fender Stratocaster",
       cantidad: 1,
       desc: "Guitarra clasica",
-      precio: 1400,
+      precio: 150000,
       img: "../imagenes/strato.jpg",
     },
     {
@@ -77,7 +77,7 @@ const stockProductos = [
       nombre: "Fender Telecaster",
       cantidad: 1,
       desc: "Guitarra clasica de 6 cuerdas",
-      precio: 1200,
+      precio: 120000,
       img: "../imagenes/telecaster.jpg",
     },
   ];
