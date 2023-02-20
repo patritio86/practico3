@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>inicio de sesion</title>
+</head>
+<body>
+   
+    <div class="login-box">
+        <img src="../imgPortadas/imgLog.png"  class="avatar" alt="Logo">
+        <h1>Login Here</h1>
+        <form method="POST" id="form">
+        <!-- USERNAME INPUT -->
+        <label for="username">Username</label>
+        <input type="text" name="user" id="name" placeholder="Enter Username">
+        <!-- PASSWORD INPUT -->
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Password">
+        <input  type="button" value="log in" id="buttom" onclick="login()">
+        <p class="warnings" id="warnings"></p>
+        <a href="#">Lost your Password?</a><br>
+        <a href="#">Don't have An account?</a>
+        </form>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>
