@@ -180,15 +180,25 @@ function agregarProducto(id){
     const prod= carrito.map(prod=>{
       if(prod.id===id){
         prod.cantidad++
-      }
-    })
+      } swal({
+        title: "Producto Agregado!",
+        text: `${prod.nombre}`,
+        icon: "success",
+        button: "OK"
+      });
+    });
   }else{
     const item=stockProductos.find((element)=>element.id===id)
     //envio al carrito 
-    carrito.push(item)
+    carrito.push(item);
+    swal({
+      title: "Producto Agregado!",
+      text: `${item.nombre}`,
+      icon: "success",
+      button:"OK"
+    });
   }
-  
-  mostrarCarrito()
+  mostrarCarrito();
 }
 
 function eliminarProducto(id){
