@@ -94,8 +94,11 @@ const stockProductos = [
       console.log(producto);
     })
   })
+  .catch(function(error){
+    console.log(error);
+  });
  }
- cargarJson();// llamo a la funcion para visualizar lo por consola los datos.
+ cargarJson();// llamo a la funcion para visualizarlo por consola
 
 
 
