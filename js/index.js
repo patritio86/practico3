@@ -5,11 +5,15 @@ function login(){
     pass=document.getElementById("password").value;
 
     if(user=="patricio" && pass== "1986pato"){
-        swal ( "¡ Bimbenido ! " ) ;
         window.location="../html/pagina.html";
     } else{
-        swal ( "¡ Usuario o contaseña incorrecta ! " , " ...¡Intentelo nuevamente gracias! " )  ;
-
+        //swal ( "¡ Usuario o contaseña incorrecta ! " , " ...¡Intentelo nuevamente gracias! " )  ;
+        swal({
+            title: "Usuario o contraseña incorrecta!",
+            text: "..Intentelo nuevamente gracias..",
+            icon: "error",
+            button: "OK"
+          });
     }
 }
 // uso de Storage

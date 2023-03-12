@@ -1,4 +1,4 @@
-// cracion del array de stock de los productos
+/*  // cracion del array de stock de los productos
 const stockProductos = [
     {
       id: 1,
@@ -80,12 +80,100 @@ const stockProductos = [
       precio: 120000,
       img: "../imagenes/telecaster.jpg",
     },
-  ];
+  ]; 
+  */
+
+  const stockProductos=`[
+    {
+      "id": 1,
+      "nombre": "Esp James Hetfield",
+      "cantidad": 1,
+      "desc": "Guitarra Esp metallica",
+      "precio": 70000,
+      "img": "../imagenes/esp.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Esp Cola de tiburon",
+      "cantidad": 1,
+      "desc": "Guitarra modelo Kirk hammet",
+      "precio": 90000,
+      "img": "../imagenes/esp1.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Gipson Les Paul",
+      "cantidad": 1,
+      "desc": "Guitarra de 6 cuerda ",
+      "precio": 101000,
+      "img": "../imagenes/gibson.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Ibanez RG160",
+      "cantidad": 1,
+      "desc": "guitarra de 6 cuerdas con tremolo",
+      "precio": 97000,
+      "img": "../imagenes/ibanez.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Ibanez RGAR42 ",
+      "cantidad": 1,
+      "desc": "Guitarra japoneza de 6 cuerdas con tremolo",
+      "precio": 130000,
+      "img": "../imagenes/ibanez1.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "jackson Esp",
+      "cantidad": 1,
+      "desc": "Guitarra 6 cuerdas negra ",
+      "precio": 82000,
+      "img": "../imagenes/jackson.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "jackson R-10",
+      "cantidad": 1,
+      "desc": "Guitarra de 6 con puete fijo",
+      "precio": 95000,
+      "img": "../imagenes/jackson2.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "stramberg boden",
+      "cantidad": 1,
+      "desc": "Guitarra ergonomica de 6 cuerdas",
+      "precio": 250000,
+      "img": "../imagenes/stramberg.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Fender Stratocaster",
+      "cantidad": 1,
+      "desc": "Guitarra clasica",
+      "precio": 150000,
+      "img": "../imagenes/strato.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "Fender Telecaster",
+      "cantidad": 1,
+      "desc": "Guitarra clasica de 6 cuerdas",
+      "precio": 120000,
+      "img": "../imagenes/telecaster.jpg"
+    }
+  ]`;
+
+  console.log(typeof stockProductos);
+
+const jsonData=JSON.parse(stockProductos);
+console.log(typeof jsonData);
 
 // creo el carrito vacio
   let carrito=[];
-
-
+  
 const contenedor = document.querySelector("#contenedor");
 
 //hace que el numero que esta en el icono del carrito incremente la cantidad de productos dentro del mismo
@@ -99,7 +187,7 @@ const vaciarCarrito=document.querySelector("#vaciarCarrito")
 const precioTotal=document.querySelector('#precioTotal')
 
 
-stockProductos.forEach((prod) => {
+jsonData.forEach((prod) => {
     //realizo una desestructuracion de los objetos
     const {id, nombre, precio, desc, img, cantidad}= prod;
     //inyecto al html utilizo un bootstrap
@@ -180,7 +268,9 @@ function agregarProducto(id){
     const prod= carrito.map(prod=>{
       if(prod.id===id){
         prod.cantidad++
-      } swal({
+      } 
+      //agrego de la libreria sweet alert como un objeto.
+      swal({
         title: "Producto Agregado!",
         text: `${prod.nombre}`,
         icon: "success",
@@ -188,7 +278,7 @@ function agregarProducto(id){
       });
     });
   }else{
-    const item=stockProductos.find((element)=>element.id===id)
+    const item=jsonData.find((element)=>element.id===id)
     //envio al carrito 
     carrito.push(item);
     swal({
