@@ -83,6 +83,22 @@ const stockProductos = [
   ]; 
   */
 
+// cargo de datos de Json  usando fetch y lo recorro con un forEach e imprimo en consola.
+ function cargarJson(){
+  fetch('../json/data.json')
+  .then(function(res){
+    return res.json();
+  })
+  .then(function(data){
+    data.forEach(function(producto){
+      console.log(producto);
+    })
+  })
+ }
+ cargarJson();// llamo a la funcion para visualizar lo por consola los datos.
+
+
+
   const stockProductos=`[
     {
       "id": 1,
@@ -166,10 +182,11 @@ const stockProductos = [
     }
   ]`;
 
-  console.log(typeof stockProductos);
+  console.log(typeof stockProductos);//imprimo que tipo de dato es stockProductos
+const jsonData=JSON.parse(stockProductos);//paso un string a un objeto 
+console.log(typeof jsonData);// Imprimo el tipo de dato que es jsonData
 
-const jsonData=JSON.parse(stockProductos);
-console.log(typeof jsonData);
+
 
 // creo el carrito vacio
   let carrito=[];
