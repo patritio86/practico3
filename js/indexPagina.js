@@ -10,6 +10,7 @@ const carritoContenedor=document.querySelector('#carritoContenedor');
 //creamos la constante vaciar carrito y lo unimos con el id viciarCarrito del html.
 const vaciarCarrito=document.querySelector("#vaciarCarrito")
 
+
 //creamos la constate precioTotal 
 const precioTotal=document.querySelector('#precioTotal')
 fetch('../json/data.json')
@@ -129,6 +130,14 @@ function eliminarProducto(id){
     mostrarCarrito()
     
 }
+
+
+
+ document.getElementById("btnComprar").addEventListener("click",function(){
+  swal({title: "compra exitosa!",
+        icon: "success",
+        });
+ })
 
 //funcion que gurda en el localStorage
 function gaurdarStorage(){
