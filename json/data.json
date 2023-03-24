@@ -70,8 +70,7 @@
       "desc": "Guitarra clasica",
       "precio": 150000,
       "img": "../imagenes/strato.jpg"
-    },
-    {
+    },  {
       "id": 10,
       "nombre": "Fender Telecaster",
       "cantidad": 1,

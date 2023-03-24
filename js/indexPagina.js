@@ -1,196 +1,3 @@
-/*  // cracion del array de stock de los productos
-const stockProductos = [
-    {
-      id: 1,
-      nombre: "Esp James Hetfield",
-      cantidad: 1,
-      desc: "Guitarra Esp metallica",
-      precio: 70000,
-      img: "../imagenes/esp.jpg",
-    },
-    {
-      id: 2,
-      nombre: "Esp Cola de tiburon",
-      cantidad: 1,
-      desc: "Guitarra modelo Kirk hammet",
-      precio: 90000,
-      img: "../imagenes/esp1.jpg",
-    },
-    {
-      id: 3,
-      nombre: "Gipson Les Paul",
-      cantidad: 1,
-      desc: "Guitarra de 6 cuerda ",
-      precio: 101000,
-      img: "../imagenes/gibson.jpg",
-    },
-    {
-      id: 4,
-      nombre: "Ibanez RG160",
-      cantidad: 1,
-      desc: "guitarra de 6 cuerdas con tremolo",
-      precio: 97000,
-      img: "../imagenes/ibanez.jpg",
-    },
-    {
-      id: 5,
-      nombre: "Ibanez RGAR42 ",
-      cantidad: 1,
-      desc: "Guitarra japoneza de 6 cuerdas con tremolo",
-      precio: 130000,
-      img: "../imagenes/ibanez1.jpg",
-    },
-    {
-      id: 6,
-      nombre: "jackson Esp",
-      cantidad: 1,
-      desc: "Guitarra 6 cuerdas negra ",
-      precio: 82000,
-      img: "../imagenes/jackson.jpg",
-    },
-    {
-      id: 7,
-      nombre: "jackson R-10",
-      cantidad: 1,
-      desc: "Guitarra de 6 con puete fijo",
-      precio: 95000,
-      img: "../imagenes/jackson2.jpg",
-    },
-    {
-      id: 8,
-      nombre: "stramberg boden",
-      cantidad: 1,
-      desc: "Guitarra ergonomica de 6 cuerdas",
-      precio: 250000,
-      img: "../imagenes/stramberg.jpg",
-    },
-    {
-      id: 9,
-      nombre: "Fender Stratocaster",
-      cantidad: 1,
-      desc: "Guitarra clasica",
-      precio: 150000,
-      img: "../imagenes/strato.jpg",
-    },
-    {
-      id: 10,
-      nombre: "Fender Telecaster",
-      cantidad: 1,
-      desc: "Guitarra clasica de 6 cuerdas",
-      precio: 120000,
-      img: "../imagenes/telecaster.jpg",
-    },
-  ]; 
-  */
-
-// cargo de datos de Json  usando fetch y lo recorro con un forEach e imprimo en consola.
- function cargarJson(){
-  fetch('../json/data.json')
-  .then(function(res){
-    return res.json();
-  })
-  .then(function(data){
-    data.forEach(function(producto){
-      console.log(producto);
-    })
-  })
-  .catch(function(error){
-    console.log(error);
-  });
- }
- cargarJson();// llamo a la funcion para visualizarlo por consola
-
-
-
-  const stockProductos=`[
-    {
-      "id": 1,
-      "nombre": "Esp James Hetfield",
-      "cantidad": 1,
-      "desc": "Guitarra Esp metallica",
-      "precio": 70000,
-      "img": "../imagenes/esp.jpg"
-    },
-    {
-      "id": 2,
-      "nombre": "Esp Cola de tiburon",
-      "cantidad": 1,
-      "desc": "Guitarra modelo Kirk hammet",
-      "precio": 90000,
-      "img": "../imagenes/esp1.jpg"
-    },
-    {
-      "id": 3,
-      "nombre": "Gipson Les Paul",
-      "cantidad": 1,
-      "desc": "Guitarra de 6 cuerda ",
-      "precio": 101000,
-      "img": "../imagenes/gibson.jpg"
-    },
-    {
-      "id": 4,
-      "nombre": "Ibanez RG160",
-      "cantidad": 1,
-      "desc": "guitarra de 6 cuerdas con tremolo",
-      "precio": 97000,
-      "img": "../imagenes/ibanez.jpg"
-    },
-    {
-      "id": 5,
-      "nombre": "Ibanez RGAR42 ",
-      "cantidad": 1,
-      "desc": "Guitarra japoneza de 6 cuerdas con tremolo",
-      "precio": 130000,
-      "img": "../imagenes/ibanez1.jpg"
-    },
-    {
-      "id": 6,
-      "nombre": "jackson Esp",
-      "cantidad": 1,
-      "desc": "Guitarra 6 cuerdas negra ",
-      "precio": 82000,
-      "img": "../imagenes/jackson.jpg"
-    },
-    {
-      "id": 7,
-      "nombre": "jackson R-10",
-      "cantidad": 1,
-      "desc": "Guitarra de 6 con puete fijo",
-      "precio": 95000,
-      "img": "../imagenes/jackson2.jpg"
-    },
-    {
-      "id": 8,
-      "nombre": "stramberg boden",
-      "cantidad": 1,
-      "desc": "Guitarra ergonomica de 6 cuerdas",
-      "precio": 250000,
-      "img": "../imagenes/stramberg.jpg"
-    },
-    {
-      "id": 9,
-      "nombre": "Fender Stratocaster",
-      "cantidad": 1,
-      "desc": "Guitarra clasica",
-      "precio": 150000,
-      "img": "../imagenes/strato.jpg"
-    },
-    {
-      "id": 10,
-      "nombre": "Fender Telecaster",
-      "cantidad": 1,
-      "desc": "Guitarra clasica de 6 cuerdas",
-      "precio": 120000,
-      "img": "../imagenes/telecaster.jpg"
-    }
-  ]`;
-
-  console.log(typeof stockProductos);//imprimo que tipo de dato es stockProductos
-const jsonData=JSON.parse(stockProductos);//paso un string a un objeto 
-console.log(typeof jsonData);// Imprimo el tipo de dato que es jsonData
-
-
-
 // creo el carrito vacio
   let carrito=[];
   
@@ -205,25 +12,32 @@ const vaciarCarrito=document.querySelector("#vaciarCarrito")
 
 //creamos la constate precioTotal 
 const precioTotal=document.querySelector('#precioTotal')
-
-
-jsonData.forEach((prod) => {
-    //realizo una desestructuracion de los objetos
-    const {id, nombre, precio, desc, img, cantidad}= prod;
-    //inyecto al html utilizo un bootstrap
-    contenedor.innerHTML+=`
-    <div class="card mt-3" style="width: 18rem;">
-    <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${nombre}</h5>
-      <p class="card-text">Precio: ${precio}</p>
-      <p class="card-text">Descripcion: ${desc}</p>
-      <p class="card-text">Cantidad: ${cantidad}</p>
-      <button class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
-    </div>
+fetch('../json/data.json')
+  .then(response => response.json())
+  .then(data => {
+    jsonData = data;
+    jsonData.forEach((prod) => {
+  // código para mostrar los productos   
+  jsonData.forEach((prod) => {
+  //realizo una desestructuracion de los objetos
+  const {id, nombre, precio, desc, img, cantidad}= prod;
+  //inyecto al html utilizo un bootstrap
+  contenedor.innerHTML+=`
+  <div class="card mt-3" style="width: 18rem;">
+  <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${nombre}</h5>
+    <p class="card-text">Precio: ${precio}</p>
+    <p class="card-text">Descripcion: ${desc}</p>
+    <p class="card-text">Cantidad: ${cantidad}</p>
+    <button class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
   </div>
-    `
+</div>
+  `
 });
+    });
+  });
+
 
 
 //agrego un addlisener porque cuando actualizo pierdo la informacion del carrito.
@@ -240,8 +54,6 @@ vaciarCarrito.addEventListener('click',()=>{
   carrito.length=[];
   mostrarCarrito();
 })
-
-
 
 const mostrarCarrito=()=>{
     const modalBody = document.querySelector('.modal .modal-body')
@@ -322,4 +134,3 @@ function eliminarProducto(id){
 function gaurdarStorage(){
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
-
