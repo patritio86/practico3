@@ -1,39 +1,26 @@
-//validacion del ingreso a la pagina de compras.
-function login(){
-    let user,pass;
-    user= document.getElementById("name").value;
-    pass=document.getElementById("password").value;
-
-    if(user=="patricio" && pass== "1986pato"){
-        window.location="../html/pagina.html";
-    } else{
-        //swal ( "¡ Usuario o contaseña incorrecta ! " , " ...¡Intentelo nuevamente gracias! " )  ;
-        swal({
-            title: "Usuario o contraseña incorrecta!",
-            text: "..Intentelo nuevamente gracias..",
-            icon: "error",
-            button: "OK"
-          });
+function validarUsuario() {
+    // Obtener los datos del localStorage
+    const datosGuardados = JSON.parse(localStorage.getItem("datosFormulario")) || [];
+    
+    // Obtener los valores de los campos de usuario y contraseña
+    const usuario = document.getElementById('usuario').value;
+    const password = document.getElementById('password').value;
+  
+    // Iterar sobre el array de objetos y buscar coincidencias
+    for (const { usuario: usuarioActual, password: passwordActual } of datosGuardados) {
+      if (usuario === usuarioActual && password === passwordActual) {
+        // Si se encuentra una coincidencia, redireccionar al usuario a la página de inicio
+        window.location.href = "../html/pagina.html";
+        return;
+      }
     }
-}
-// uso de Storage
-class Guitarra{
-    constructor(guitarra){
-        this.id= guitarra.id;
-        this.marca=guitarra.marca;
-        this.precio=guitarra.precio;
-        this.cantidad=guitarra.cantidad;
-        this.precioTotal=guitarra.precio;
-    }
-    addUnit(){
-        this.cantidad++;
-    }
-    deleteUnit(){
-        this.cantidad--;
-    }
-    updatePrecioTotal(){
-        this.precioTotal=this.precio*this.cantidad;
-    }
-}
-
-
+  
+    // Si no se encuentra ninguna coincidencia, mostrar un mensaje de error
+    swal({
+        title: "Usuario o contraseña incorrecta!",
+        text: "..Intentelo nuevamente gracias..",
+        icon: "error",
+        button: "OK"
+      });
+  }
+  

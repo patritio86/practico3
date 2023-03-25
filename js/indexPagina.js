@@ -132,12 +132,17 @@ function eliminarProducto(id){
 }
 
 
-
- document.getElementById("btnComprar").addEventListener("click",function(){
+// creo el boton comprar y agrego un alert que dice compra exitosa.
+document.getElementById("btnComprar").addEventListener("click",function(){
   swal({title: "compra exitosa!",
         icon: "success",
         });
- })
+        then(function(){
+          vaciarCarrito();
+        })
+}) 
+ 
+
 
 //funcion que gurda en el localStorage
 function gaurdarStorage(){
